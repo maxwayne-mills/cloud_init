@@ -1,4 +1,6 @@
 #cloud-config
+bootcmd:
+        useradd -c "Test user" deployuser
 
 # Adding a user automatically disables default ubuntu user
 users:
