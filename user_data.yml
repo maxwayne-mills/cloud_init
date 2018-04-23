@@ -42,7 +42,7 @@ write_files:
                   for d in data["droplets"]])'| column -t > do.txt
 
       curl -F file=@do.txt -F initial_comment="Running Droplets" -F channels=#do -F token=$SLACK https://slack.com/api/files.upload
-    path: /home/deployuser/send_daily_droplet_notices .sh
+    path: /home/deployuser/send_daily_droplet_notices.sh
     owner: deployuser:deployuser
     permissions: '0755'
   - content: "0 9 * * * /home/deployuser/send_daily_droplet_notices.sh"
