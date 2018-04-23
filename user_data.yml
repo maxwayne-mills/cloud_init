@@ -1,7 +1,7 @@
 #cloud-config
 
 bootcmd:
-    - useradd -m -c "Deployuser" deployuser
+    - useradd -m -c "Deployment user" deployuser
 
 # Adding a user automatically disables default ubuntu user
 users:
@@ -46,7 +46,7 @@ write_files:
     path: /home/deployuser/send_daily_droplet_notices .sh
     owner: deployuser:deployuser
     permissions: '0755'
-  - content: "0 09 * * * /home/cmills/send_daily_droplet_notices.sh"
+  - content: "0 09 * * * /home/deployuser/send_daily_droplet_notices.sh"
     owner: deployuser:deployuser
     path: /var/spool/cron/crontabs/deployuser
    
