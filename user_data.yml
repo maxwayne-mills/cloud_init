@@ -27,7 +27,7 @@ packages:
 
 write_files:
   - content: |
-      #!/bin/bash
+      #!/usr/bin/env bash
 
       DIGITALOCEAN=(Get Key From https://cloud.digitalocean.com/settings/api/tokens)
       SLACK=(Get Key From https://my.slack.com/services/new/bot) 
@@ -46,7 +46,7 @@ write_files:
     path: /home/deployuser/send_daily_droplet_notices .sh
     owner: deployuser:deployuser
     permissions: '0755'
-  - content: "0 09 * * * /home/deployuser/send_daily_droplet_notices.sh"
+  - content: "0 9 * * * /home/deployuser/send_daily_droplet_notices.sh"
     owner: deployuser:deployuser
     path: /var/spool/cron/crontabs/deployuser
    
