@@ -50,4 +50,4 @@ write_files:
     path: /var/spool/cron/crontabs/deployuser
    
 # Disable root login
-disable_root: true
+#disable_root: true
